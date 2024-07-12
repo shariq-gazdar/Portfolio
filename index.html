@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+    <nav
+      class="flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45"
+    >
+      <h1 id="navHeading" class="font-Rowdies font-bold text-3xl">Shariq</h1>
+      <div id="optionPc" class="lg:flex sm:hidden">
+        <ul>
+          <li class="inline px-2 hover:text-amber-400"><a href="">Home</a></li>
+          <li class="inline px-2 hover:text-amber-400"><a href="">About</a></li>
+          <li class="inline px-2 hover:text-amber-400">
+            <a href="">Contact</a>
+          </li>
+          <li class="inline px-2 hover:text-amber-400">
+            <a href="">Project</a>
+          </li>
+          <li class="inline px-2 hover:text-amber-400">
+            <a href="">Reviews</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section
+      class="flex justify-between mx-56 font-Rowdies py-36 backdrop-opacity-20"
+    >
+      <div id="left" class="flex-col items-center">
+        <p class="text-xs text-yellow-500">Hello!</p>
+        <h1 id="intro" class="text-7xl inline px-1">I'm</h1>
+        <h1 id="yellowIntro" class="text-7xl text-yellow-500 inline">
+          Shariq Gazdar
+        </h1>
+        <p id="designation" class="text-3xl py-5">Frontend Developer</p>
+        <div id="btnGrp" class="flex gap-3">
+          <button
+            id="hireBtn"
+            class="bg-amber-400 py-2 px-2 rounded-xl border border-amber-400 hover:border-white"
+          >
+            <a href="mailto:gazdarshariq0@gmail.com" target="_blank"
+              >Hire me!</a
+            >
+          </button>
+          <button
+            id="hireBtn"
+            class="bg-black py-2 px-2 rounded-xl border border-white hover:border-amber-400 w-32"
+          >
+            <a href="#" target="_blank">My Works</a>
+          </button>
+        </div>
+      </div>
+      <div id="right">
+        <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
+      </div>
+    </section>
+    <section id="aboutSection" class="mx-56 font-Rowdies py-60">
+      <div id="left">
+        <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
+      </div>
+      <div id="right">
+        <h1 id="aboutHeading" class="text-4xl font-black">About Me</h1>
+        <p id="desc" class="text-md font-extralight py-6">
+          A hustling and hardworking web developer
+        </p>
+      </div>
+      <div id="tableInfo">
+        <tr>
+          <th>Name</th>
+          <td>Shariq Gazdar</td>
+        </tr>
+      </div>
+    </section>
+  </body>
+</html>
