@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- <link
       href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
       rel="stylesheet"
@@ -18,29 +19,35 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-black text-white w-full">
+  <body class="bg-black text-white w-full overflow-x-hidden">
     <nav
-      class="flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45 flex-wrap"
+      class="lg:flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45 flex-wrap"
     >
       <h1 id="navHeading" class="font-Rowdies font-bold text-3xl">Shariq</h1>
-      <div id="optionPc" class="lg:flex sm:hidden">
-        <ul>
-          <li class="inline px-2 hover:text-amber-400"><a href="">Home</a></li>
-          <li class="inline px-2 hover:text-amber-400"><a href="">About</a></li>
-          <li class="inline px-2 hover:text-amber-400">
+      <div id="optionPc" class="hidden lg:flex">
+        <ul class="flex justify-around gap-5">
+          <li class="inlin hover:text-amber-400 hover:underline">
+            <a href="">Home</a>
+          </li>
+          <li class="inline hover:text-amber-400 hover:underline">
+            <a href="">About</a>
+          </li>
+          <li class="inline hover:text-amber-400 hover:underline">
             <a href="">Contact</a>
           </li>
-          <li class="inline px-2 hover:text-amber-400">
+          <li class="inline hover:text-amber-400 hover:underline">
             <a href="">Project</a>
           </li>
-          <li class="inline px-2 hover:text-amber-400">
+          <li class="inline hover:text-amber-400 hover:underline">
             <a href="">Reviews</a>
           </li>
         </ul>
       </div>
     </nav>
     <section
-      class="flex justify-between mx-56 font-Rowdies py-36 backdrop-opacity-20"
+      class="flex justify-between m-auto font-Rowdies py-36 backdrop-opacity-20"
+      data-aos="fade-right"
+      data-aos-duration="1500"
     >
       <div id="left" class="flex-col items-center">
         <p class="text-xs text-yellow-500">Hello!</p>
@@ -70,8 +77,13 @@
         <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
       </div>
     </section>
-    <section id="aboutSection" class="mx-56 font-Rowdies py-60 flex">
-      <div id="left">
+    <section
+      id="aboutSection"
+      class="lg:mx-56 font-Rowdies py-60 flex +sm:mx-0"
+      data-aos="fade-left"
+      data-aos-duration="1500"
+    >
+      <div id="left" class="+sm:hidden">
         <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
       </div>
       <div id="right " class="flex flex-col">
@@ -136,7 +148,7 @@
         </div>
       </div>
     </section>
-    <section id="skills">
+    <section id="skills" data-aos="fade-left" data-aos-duration="1500">
       <h1
         id="skillsHeading"
         class="text-5xl font-black underline decoration-amber-400 text-center"
@@ -145,7 +157,7 @@
       </h1>
       <div
         id="skillSection"
-        class="flex justify-around py-9 flex-wrap m-auto overflow-scroll gap-4"
+        class="xl:flex justify-around py-9 flex-wrap m-auto overflow-scroll gap-4 +sm:flex-col"
         style="width: 71rem"
       >
         <!-- Html Bar -->
@@ -215,14 +227,206 @@
         </div>
       </div>
     </section>
-    <section id="Projects">
+    <section id="Projects" data-aos="fade-right" data-aos-duration="1500">
       <h1
         id="projectHeading"
         class="text-5xl font-black underline decoration-amber-400 text-center py-10"
       >
         Projects
       </h1>
+      <div
+        id="cardsCollection"
+        class="flex justify-around flex-wrap items-stretch gap-4"
+      >
+        <!-- Card -->
+        <div
+          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZICV0fftz_-7z6RqV753FHwIECEPSxjhi6g&s"
+              alt=""
+            />
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Todo List
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400 min-h-20"
+            >
+              Todo List App Created By HTML CSS and JavaScript
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              View Website
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZICV0fftz_-7z6RqV753FHwIECEPSxjhi6g&s"
+              alt=""
+            />
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Calculator
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Here are the biggest enterprise technology acquisitions of 2021 so
+              far, in reverse chronological order.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZICV0fftz_-7z6RqV753FHwIECEPSxjhi6g&s"
+              alt=""
+            />
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Text Utility
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Here are the biggest enterprise technology acquisitions of 2021 so
+              far, in reverse chronological order.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZICV0fftz_-7z6RqV753FHwIECEPSxjhi6g&s"
+              alt=""
+            />
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Weather App
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Here are the biggest enterprise technology acquisitions of 2021 so
+              far, in reverse chronological order.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
