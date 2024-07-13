@@ -11,11 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    /> -->
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-black text-white">
     <nav
-      class="flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45"
+      class="flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45 flex-wrap"
     >
       <h1 id="navHeading" class="font-Rowdies font-bold text-3xl">Shariq</h1>
       <div id="optionPc" class="lg:flex sm:hidden">
@@ -65,22 +70,138 @@
         <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
       </div>
     </section>
-    <section id="aboutSection" class="mx-56 font-Rowdies py-60">
+    <section id="aboutSection" class="mx-56 font-Rowdies py-60 flex">
       <div id="left">
         <img src="assets/Fiverr_Dp-removebg-preview.png" alt="" />
       </div>
-      <div id="right">
-        <h1 id="aboutHeading" class="text-4xl font-black">About Me</h1>
+      <div id="right " class="flex flex-col">
+        <h1
+          id="aboutHeading"
+          class="text-4xl font-black underline decoration-amber-400"
+        >
+          About Me
+        </h1>
         <p id="desc" class="text-md font-extralight py-6">
           A hustling and hardworking web developer
         </p>
-      </div>
-      <div id="tableInfo">
-        <tr>
-          <th>Name</th>
-          <td>Shariq Gazdar</td>
-        </tr>
+        <div id="tableInfo">
+          <table>
+            <tr>
+              <th class="font-bold pr-2 text-left">Name:</th>
+              <td>Shariq Gazdar</td>
+            </tr>
+            <tr>
+              <th class="font-bold pr-2 text-left w-44">Date Of Birth:</th>
+              <td>20-September-2007</td>
+            </tr>
+            <tr>
+              <th class="font-bold pr-2 text-left">Address:</th>
+              <td class="w-96">A/509 Qasimabad Liaqutabad Karachi</td>
+            </tr>
+            <tr>
+              <th class="font-bold pr-2 text-left">Zip Code:</th>
+              <td>71000</td>
+            </tr>
+            <tr>
+              <th class="font-bold pr-2 text-left">Email:</th>
+              <td>
+                <a href="mailto:gazdarshariq0@gmail.com"
+                  >gazdarshariq0@gmail.com</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <th class="font-bold pr-2 text-left">Phone:</th>
+              <td>
+                <a href="tel:+9231 1120295">+9231 1120295</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="bottomright" class="py-4">
+          <div id="paras" class="text-xl font-bold">
+            <p id="yellowNumber" class="text-amber-400 inline">10</p>
+            <p id="yellowNumber" class="inline">Complete Projects</p>
+          </div>
+          <button
+            id="downloadBtn"
+            class="bg-amber-400 py-1 px-1 rounded-xl border border-amber-400 hover:border-white mt-1"
+          >
+            <a
+              href="https://mega.nz/file/mmRxWKBY#08xlD7JcnwsUz1TFM3UDR3Q9DYT6m4Hjxp60J7pKuEg"
+              target="_blank"
+              >Download CV (Mega)</a
+            >
+          </button>
+        </div>
       </div>
     </section>
+    <section id="skills">
+      <h1
+        id="skillsHeading"
+        class="text-5xl font-black underline decoration-amber-400 text-center"
+      >
+        My Skills
+      </h1>
+      <div
+        id="skillSection"
+        class="flex justify-around pt-9 flex-wrap"
+        style="width: 71rem"
+      >
+        <!-- Html Bar -->
+        <div id="barHTML" class="w-96">
+          <div class="skillsHeading flex justify-between">
+            <h2 class="text-lg">Html</h2>
+            <h2 class="text-lg">95%</h2>
+          </div>
+          <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-amber-500 h-2.5 rounded-full"
+              style="width: 95%"
+            ></div>
+          </div>
+        </div>
+        <!-- Css Bar -->
+        <div id="barCSS" class="w-96">
+          <div class="skillsHeading flex justify-between">
+            <h2 class="text-lg">CSS</h2>
+            <h2 class="text-lg">90%</h2>
+          </div>
+          <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-amber-500 h-2.5 rounded-full"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+        <!-- JsBar -->
+        <div id="barJS" class="w-96">
+          <div class="skillsHeading flex justify-between">
+            <h2 class="text-lg">JavaScript</h2>
+            <h2 class="text-lg">90%</h2>
+          </div>
+          <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-amber-500 h-2.5 rounded-full"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+        <!-- Another One -->
+        <div id="barJS" class="w-96">
+          <div class="skillsHeading flex justify-between">
+            <h2 class="text-lg">JavaScript</h2>
+            <h2 class="text-lg">90%</h2>
+          </div>
+          <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-amber-500 h-2.5 rounded-full"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script> -->
   </body>
 </html>
