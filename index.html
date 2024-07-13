@@ -18,7 +18,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-black text-white">
+  <body class="bg-black text-white w-full">
     <nav
       class="flex justify-between items-center py-5 px-5 fixed w-full z-10 bg-black bg-opacity-45 flex-wrap"
     >
@@ -145,7 +145,7 @@
       </h1>
       <div
         id="skillSection"
-        class="flex justify-around pt-9 flex-wrap"
+        class="flex justify-around py-9 flex-wrap m-auto overflow-scroll gap-4"
         style="width: 71rem"
       >
         <!-- Html Bar -->
@@ -187,20 +187,41 @@
             ></div>
           </div>
         </div>
-        <!-- Another One -->
-        <div id="barJS" class="w-96">
+        <!-- Bootstrap/Tailwind -->
+        <div id="barBT" class="w-96">
           <div class="skillsHeading flex justify-between">
-            <h2 class="text-lg">JavaScript</h2>
-            <h2 class="text-lg">90%</h2>
+            <h2 class="text-lg">Bootstrap/Tailwind</h2>
+            <h2 class="text-lg">85%</h2>
           </div>
           <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
             <div
               class="bg-amber-500 h-2.5 rounded-full"
-              style="width: 90%"
+              style="width: 85%"
+            ></div>
+          </div>
+        </div>
+        <!-- React -->
+        <div id="barBT" class="w-96">
+          <div class="skillsHeading flex justify-between">
+            <h2 class="text-lg">React Js</h2>
+            <h2 class="text-lg">45%</h2>
+          </div>
+          <div class="w-96 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div
+              class="bg-amber-500 h-2.5 rounded-full"
+              style="width: 45%"
             ></div>
           </div>
         </div>
       </div>
+    </section>
+    <section id="Projects">
+      <h1
+        id="projectHeading"
+        class="text-5xl font-black underline decoration-amber-400 text-center py-10"
+      >
+        Projects
+      </h1>
     </section>
     <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script> -->
   </body>
