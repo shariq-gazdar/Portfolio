@@ -9,17 +9,165 @@
   <body class="bg-gradient-to-r from-green-700 to-blue-700 h-64 w-full">
     <div
       id="calculator"
-      class="m-auto mt-24 w-96 h-96 rounded-2xl border border-white"
+      class="m-auto mt-24 w-80 rounded-2xl border border-white"
+      style="height: 31rem"
     >
-      <div id="screen" class="bg-white rounded-t-2xl">
+      <div id="screen" class="bg-black rounded-t-2xl">
         <textarea
-          name=""
-          id=""
+          name="screen"
+          id="calcScreen"
           readonly
-          class="resize-none w-full h-28 rounded-2xl"
+          class="resize-none w-full h-32 rounded-t-2xl bg-black"
         ></textarea>
       </div>
-      <div id="buttonSection"></div>
+      <div id="buttonSection">
+        <div
+          id="buttonPad"
+          class="bg-black rounded-b-2xl pt-5"
+          style="height: 28vw"
+        >
+          <table class="flex justify-center items-stretch">
+            <tr class="flex justify-evenly gap-4 py-5">
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="oneBtn"
+                >
+                  1
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="twoBtn"
+                >
+                  2
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="threeBtn"
+                >
+                  3
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  id="plusBtn"
+                >
+                  +
+                </button>
+              </td>
+            </tr>
+            <tr class="flex justify-evenly gap-4">
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="fourBtn"
+                >
+                  4
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="fiveBtn"
+                >
+                  5
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="sixBtn"
+                >
+                  6
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  id="minusBtn"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+            <tr class="flex justify-evenly gap-4 py-5">
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="sevenBtn"
+                >
+                  7
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="eightBtn"
+                >
+                  8
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="nineBtn"
+                >
+                  9
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  id="multiplyBtn"
+                >
+                  X
+                </button>
+              </td>
+            </tr>
+
+            <tr class="flex justify-evenly gap-4">
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="ceBtn"
+                >
+                  CE
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="zeroBtn"
+                >
+                  0
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  id="equalBtn"
+                >
+                  =
+                </button>
+              </td>
+              <td>
+                <button
+                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  id="divideBtn"
+                >
+                  /
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
