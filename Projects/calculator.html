@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator - Calculate Easily</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #calcScreen::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
   </head>
+
   <body class="bg-gradient-to-r from-green-700 to-blue-700 h-64 w-full">
     <div
       id="calculator"
@@ -20,7 +26,7 @@
           name="screen"
           id="calcScreen"
           readonly
-          class="resize-none w-full h-32 rounded-2xl bg-black outline-none p-5 text-6xl text-white"
+          class="resize-none w-full h-32 rounded-2xl bg-black outline-none p-5 text-6xl text-white overflow-x-auto whitespace-nowrap"
         >
 0</textarea
         >
@@ -37,6 +43,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="oneBtn"
+                  value="1"
                 >
                   1
                 </button>
@@ -45,6 +52,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="twoBtn"
+                  value="2"
                 >
                   2
                 </button>
@@ -53,14 +61,16 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="threeBtn"
+                  value="3"
                 >
                   3
                 </button>
               </td>
               <td>
                 <button
-                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  class="bg-amber-400 p-4 w-14 rounded-full calcBtn"
                   id="plusBtn"
+                  value="+"
                 >
                   +
                 </button>
@@ -71,6 +81,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="fourBtn"
+                  value="4"
                 >
                   4
                 </button>
@@ -79,6 +90,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="fiveBtn"
+                  value="5"
                 >
                   5
                 </button>
@@ -87,14 +99,16 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="sixBtn"
+                  value="6"
                 >
                   6
                 </button>
               </td>
               <td>
                 <button
-                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  class="bg-amber-400 p-4 w-14 rounded-full calcBtn"
                   id="minusBtn"
+                  value="-"
                 >
                   -
                 </button>
@@ -105,6 +119,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="sevenBtn"
+                  value="7"
                 >
                   7
                 </button>
@@ -113,6 +128,7 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="eightBtn"
+                  value="8"
                 >
                   8
                 </button>
@@ -121,14 +137,16 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="nineBtn"
+                  value="9"
                 >
                   9
                 </button>
               </td>
               <td>
                 <button
-                  class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
+                  class="bg-amber-400 p-4 w-14 rounded-full calcBtn"
                   id="multiplyBtn"
+                  value="*"
                 >
                   X
                 </button>
@@ -137,10 +155,7 @@
 
             <tr class="flex justify-evenly gap-4">
               <td>
-                <button
-                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
-                  id="ceBtn"
-                >
+                <button class="bg-slate-50 p-4 w-14 rounded-full" id="ceBtn">
                   CE
                 </button>
               </td>
@@ -148,14 +163,16 @@
                 <button
                   class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
                   id="zeroBtn"
+                  value="0"
                 >
                   0
                 </button>
               </td>
               <td>
                 <button
-                  class="calcBtn bg-slate-50 p-4 w-14 rounded-full"
+                  class="bg-slate-50 p-4 w-14 rounded-full"
                   id="equalBtn"
+                  value="="
                 >
                   =
                 </button>
@@ -164,6 +181,7 @@
                 <button
                   class="calcBtn bg-amber-400 p-4 w-14 rounded-full"
                   id="divideBtn"
+                  value="/"
                 >
                   /
                 </button>
