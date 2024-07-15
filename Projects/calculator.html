@@ -9,16 +9,21 @@
   <body class="bg-gradient-to-r from-green-700 to-blue-700 h-64 w-full">
     <div
       id="calculator"
-      class="m-auto mt-24 w-80 rounded-2xl border border-white"
+      class="m-auto mt-24 w-80 rounded-2xl border border-white bg-black"
       style="height: 31rem"
     >
-      <div id="screen" class="bg-black rounded-t-2xl">
+      <div
+        id="screen"
+        class="bg-black rounded-2xl border border-white focus:border-amber-400"
+      >
         <textarea
           name="screen"
           id="calcScreen"
           readonly
-          class="resize-none w-full h-32 rounded-t-2xl bg-black"
-        ></textarea>
+          class="resize-none w-full h-32 rounded-2xl bg-black outline-none p-5 text-6xl text-white"
+        >
+0</textarea
+        >
       </div>
       <div id="buttonSection">
         <div
