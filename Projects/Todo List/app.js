@@ -32,11 +32,18 @@ addToTable = () => {
   let cell3 = newRow.insertCell(2);
   let cell4 = newRow.insertCell(3);
   let cell5 = newRow.insertCell(4);
-  let timeString = now.toLocaleTimeString();
+  let timeString = now.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true,
+  });
   cell1.textContent = counter;
   cell2.textContent = title.value;
   cell3.textContent = taskObj[title.value];
   cell4.textContent = timeString;
   cell5.innerHTML = removeBtn.outerHTML;
 };
-removeTask = () => {};
+removeTask = () => {
+  // Code to remove task from the table and taskObj
+};
