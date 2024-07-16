@@ -76,7 +76,8 @@
 #taskBox td {
   padding: 0rem 2rem;
 }
-#removeTask {
+.removeTask,
+.removeTaskNew {
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 1rem;
