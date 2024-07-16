@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+#navBar {
+  font-family: "Shantell Sans", cursive;
+  background-color: rgb(75, 143, 140);
+  font-weight: 700;
+  height: 3vw;
+}
+#todoHeading {
+  text-align: center;
+  color: yellow;
+  text-decoration: underline;
+  line-height: 3vw;
+}
+#todoHeading:hover {
+  color: white;
+}
+#planHeading {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 500;
+  padding: 10rem 0rem 5rem;
+}
+#taskForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#taskTitle {
+  height: 3rem;
+  width: 20rem;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+}
+#taskDesc {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+#taskDescription {
+  height: 10rem;
+  width: 20rem;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+#addTask {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: rgb(53, 92, 249);
+  cursor: pointer;
+}
+#taskTable {
+  display: flex;
+  justify-content: center;
+  font-family: "Shantell Sans", cursive;
+}
+#taskBox {
+  margin-top: 5rem;
+  padding-top: 1rem;
+  border: 1px solid black;
+}
+#taskBox th {
+  padding: 0rem 2rem;
+}
+
+#taskBox td {
+  padding: 0rem 2rem;
+}
+#removeBtn {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: rgb(248, 40, 40);
+  cursor: pointer;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo List - Organize Yourself</title>
+  </head>
+  <body>
+    <nav id="navBar">
+      <h1 id="todoHeading">Todo List - Organize Your Day</h1>
+    </nav>
+    <section>
+      <h1 id="planHeading">What's Your Plan Today?</h1>
+    </section>
+    <section id="form">
+      <form action="" id="taskForm">
+        <div id="tastT">
+          <input
+            type="text"
+            name="taskTitle"
+            id="taskTitle"
+            placeholder="Enter Your task Here"
+          />
+        </div>
+        <div id="taskDesc">
+          <textarea
+            name="taskDescription"
+            id="taskDescription"
+            placeholder="Describe your task"
+          ></textarea>
+        </div>
+        <button id="addTask">Add Task</button>
+      </form>
+    </section>
+    <section id="taskTable">
+      <table id="taskBox">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Title Task</th>
+            <th>Title Description</th>
+            <th>Task Time</th>
+            <th>Remove Button</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Creating Todo List App</td>
+            <td>Creating JS for my app</td>
+            <td>3:26 PM</td>
+            <th>
+              <button id="removeBtn">Remove Task</button>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </section>
+  </body>
+</html>
