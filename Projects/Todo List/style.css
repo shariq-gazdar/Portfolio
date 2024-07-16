@@ -49,6 +49,7 @@
   border-radius: 1rem;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
+  resize: none;
 }
 #addTask {
   margin-top: 1rem;
