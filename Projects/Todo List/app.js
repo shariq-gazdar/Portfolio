@@ -5,8 +5,8 @@ let table = document.querySelector("#taskBox");
 let taskObj = {};
 let counter = 1;
 let totalTask = document.querySelector("#taskNumber");
-let completeTask = document.querySelector("#completeNumber");
-let incompleteTask = document.querySelector("#incompleteNumber");
+let completeNumber = document.querySelector("#completeNumber");
+let incompleteNumber = document.querySelector("#IncompleteNumber");
 let completePer = document.querySelector("#complete");
 // let completeBtn = document.querySelector("");
 let completeCounterVal = 0;
@@ -19,6 +19,11 @@ localStorage.setItem(completeCounter, "0");
 
 updateStatus = () => {
   totalTask.innerText = ` Tasks :${counter - 1}`;
+  console.log();
+  completeNumber.innerText = `Complete Tasks ${completeCounterVal}`;
+  incompleteNumber.innerText = `Incomplete Task${localStorage.getItem(
+    IncompleteCounter
+  )}`;
 };
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -66,11 +71,11 @@ function addToTable(key, value) {
       '<button class="removeTaskNewIncomplete">Incomplete</button>';
     let removeButtonComplete = newRow.querySelector(".removeTaskNewComplete");
     removeButtonComplete.addEventListener("click", () => {
-      removeTask(newRow);
       completeCounterVal++;
-      localStorage.setItem(completeCounter, completeCounterVal);
-
-      location.reload();
+      removeTask(newRow);
+      localStorage.setItem("Completed", completeCounterVal);
+      updateStatus();
+      // location.reload();
     });
 
     let removeButtonIncomplete = newRow.querySelector(
@@ -79,8 +84,9 @@ function addToTable(key, value) {
     removeButtonIncomplete.addEventListener("click", () => {
       removeTask(newRow);
       IncompleteCounterVal++;
-      localStorage.setItem(IncompleteCounter, IncompleteCounterVal);
-      location.reload();
+      localStorage.setItem("Incomplete", IncompleteCounterVal);
+      updateStatus();
+      // location.reload();
     });
 
     counter++;
@@ -100,8 +106,13 @@ function removeTask(row) {
 if (localStorage.length !== 0) {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
+    if (key === "Completed" || key === "Incomplete") {
+      continue;
+    }
     let value = localStorage.getItem(key);
-    addToTable(key, value);
-    updateStatus();
+    if (value == "Completed" || value == "Incomplete") {
+      addToTable(key, value);
+      updateStatus();
+    }
   }
 }
