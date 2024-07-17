@@ -19,6 +19,23 @@
 #todoHeading:hover {
   color: white;
 }
+#statusBar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+#statusBar h2 {
+  color: black;
+  background-color: rgb(202, 202, 202);
+  padding: 1rem;
+  border: 1px solid black;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+#statusBar h2:hover {
+  color: white;
+}
 #planHeading {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
