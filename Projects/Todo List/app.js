@@ -8,24 +8,21 @@ let totalTask = document.querySelector("#taskNumber");
 let completeTask = document.querySelector("#completeNumber");
 let incompleteTask = document.querySelector("#incompleteNumber");
 let completePer = document.querySelector("#complete");
-let completeBtn = document.querySelector("");
+// let completeBtn = document.querySelector("");
 let completeCounter = 0;
-
-// Load tasks from localStorage on page load
-document.addEventListener("DOMContentLoaded", () => {
-  loadTasksFromLocalStorage();
-});
+let key = title.value;
+let value = description.value;
 
 addBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (title.value !== "" && description.value !== "") {
     let key = title.value;
     let value = description.value;
-    taskObj[key] = value;
-    saveTasksToLocalStorage();
-    addToTable(key, value);
-    title.value = "";
-    description.value = "";
+    localStorage.setItem(key, value);
+    console.log(localStorage.getItem(key, value));
+    addToTable(localStorage.getItem(key), localStorage.getItem(value));
+  } else {
+    console.log("No value found in both fields");
   }
 });
 
@@ -38,7 +35,6 @@ function addToTable(key, value) {
   let cell4 = newRow.insertCell(3);
   let cell5 = newRow.insertCell(4);
   let cell6 = newRow.insertCell(5);
-
   let timeString = now.toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -46,8 +42,8 @@ function addToTable(key, value) {
     hour12: true,
   });
 
-  newRow.dataset.key = key; // Assign a data attribute to identify the row
-
+  newRow.dataset.key = key;
+  console.log(key);
   cell1.textContent = counter;
   cell2.textContent = key;
   cell3.textContent = value;
@@ -55,15 +51,13 @@ function addToTable(key, value) {
   cell5.innerHTML = '<button class="removeTaskNewComplete">Completed</button>';
   cell6.innerHTML =
     '<button class="removeTaskNewIncomplete">Incomplete</button>';
-
   let removeButtonComplete = newRow.querySelector(".removeTaskNewComplete");
-  removeButton.addEventListener("click", () => {
+  removeButtonComplete.addEventListener("click", () => {
     removeTask(newRow);
-    completeCounter++;
   });
 
   let removeButtonIncomplete = newRow.querySelector(".removeTaskNewIncomplete");
-  removeButton.addEventListener("click", () => {
+  removeButtonIncomplete.addEventListener("click", () => {
     removeTask(newRow);
   });
 
@@ -72,32 +66,18 @@ function addToTable(key, value) {
 
 function removeTask(row) {
   let key = row.dataset.key;
-  delete taskObj[key];
-  saveTasksToLocalStorage();
+  localStorage.removeItem(key);
+  localStorage.removeItem(value);
   table.deleteRow(row.rowIndex);
-
-  // Update row numbers
   counter--;
   for (let i = 1; i < table.rows.length; i++) {
     table.rows[i].cells[0].textContent = i;
   }
 }
-
-function saveTasksToLocalStorage() {
-  localStorage.setItem("tasks", JSON.stringify(taskObj));
-}
-
-function loadTasksFromLocalStorage() {
-  let storedTasks = localStorage.getItem("tasks");
-  if (storedTasks) {
-    taskObj = JSON.parse(storedTasks);
-    for (let key in taskObj) {
-      addToTable(key, taskObj[key]);
-    }
+if (localStorage.length !== 0) {
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    let value = localStorage.getItem(key);
+    addToTable(key, value);
   }
 }
-
-// Status Update Module
-
-totalTask.innerText = `Task: ${counter}`;
-completeTask.innerText = `Completed: ${completeCounter}`;

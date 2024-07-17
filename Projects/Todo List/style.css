@@ -7,13 +7,13 @@
   font-family: "Shantell Sans", cursive;
   background-color: rgb(75, 143, 140);
   font-weight: 700;
-  height: 3vw;
+  height: 3rem;
 }
 #todoHeading {
   text-align: center;
   color: yellow;
   text-decoration: underline;
-  line-height: 3vw;
+  line-height: 3rem;
   cursor: pointer;
 }
 #todoHeading:hover {
