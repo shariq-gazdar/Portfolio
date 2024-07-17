@@ -20,9 +20,11 @@ localStorage.setItem(completeCounter, "0");
 updateStatus = () => {
   totalTask.innerText = ` Tasks :${counter - 1}`;
   console.log();
-  completeNumber.innerText = `Complete Tasks ${completeCounterVal}`;
+  completeNumber.innerText = `Complete Tasks ${localStorage.getItem(
+    "Completed"
+  )}`;
   incompleteNumber.innerText = `Incomplete Task${localStorage.getItem(
-    IncompleteCounter
+    "Incomplete"
   )}`;
 };
 addBtn.addEventListener("click", (event) => {
@@ -40,7 +42,14 @@ addBtn.addEventListener("click", (event) => {
 });
 
 function addToTable(key, value) {
-  if (key == 0 || value == 0) {
+  if (
+    key == 0 ||
+    value == 0 ||
+    Number.isInteger(key) ||
+    Number.isInteger(value) ||
+    key === "Completed" ||
+    key === "Incomplete"
+  ) {
     console.log("No value found in localStorage");
   } else {
     let now = new Date();
@@ -71,10 +80,22 @@ function addToTable(key, value) {
       '<button class="removeTaskNewIncomplete">Incomplete</button>';
     let removeButtonComplete = newRow.querySelector(".removeTaskNewComplete");
     removeButtonComplete.addEventListener("click", () => {
-      completeCounterVal++;
+      // Increment the counter first
+
+      // Remove the task
       removeTask(newRow);
+
+      // Store the updated counter value in localStorage
       localStorage.setItem("Completed", completeCounterVal);
+      completeCounterVal + 1;
+
+      // Log the stored value for debugging
+      console.log(localStorage.getItem("Completed"));
+
+      // Update the task status
       updateStatus();
+
+      // Optionally reload the page if needed
       // location.reload();
     });
 
@@ -82,10 +103,22 @@ function addToTable(key, value) {
       ".removeTaskNewIncomplete"
     );
     removeButtonIncomplete.addEventListener("click", () => {
+      // Increment the counter first
+      IncompleteCounterVal + 1;
+
+      // Remove the task
       removeTask(newRow);
-      IncompleteCounterVal++;
+
+      // Store the updated counter value in localStorage
       localStorage.setItem("Incomplete", IncompleteCounterVal);
+
+      // Log the stored value for debugging
+      console.log(localStorage.getItem("Incomplete"));
+
+      // Update the task status
       updateStatus();
+
+      // Optionally reload the page if needed
       // location.reload();
     });
 
@@ -106,13 +139,8 @@ function removeTask(row) {
 if (localStorage.length !== 0) {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
-    if (key === "Completed" || key === "Incomplete") {
-      continue;
-    }
     let value = localStorage.getItem(key);
-    if (value == "Completed" || value == "Incomplete") {
-      addToTable(key, value);
-      updateStatus();
-    }
+    addToTable(key, value);
+    updateStatus();
   }
 }
