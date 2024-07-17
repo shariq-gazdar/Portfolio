@@ -81,13 +81,14 @@
   cursor: pointer;
 }
 #taskTable {
-  overflow-y: scroll;
-  width: 100vw;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   font-family: "Shantell Sans", cursive;
 }
 #taskBox {
+  width: 100dvw;
+  overflow-x: scroll;
   margin-top: 5rem;
   margin-bottom: 5rem;
   padding-top: 1rem;
@@ -115,4 +116,15 @@
   color: white;
   background-color: rgb(79, 230, 41);
   cursor: pointer;
+}
+@media screen and (max-width: 667px) {
+  #taskTable {
+    flex-direction: column;
+    overflow-x: scroll;
+    width: 100dvw;
+  }
+  #taskBox {
+    overflow-x: scroll;
+    width: 10dvw;
+  }
 }
