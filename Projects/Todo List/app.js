@@ -4,6 +4,12 @@ let addBtn = document.querySelector("#addTask");
 let table = document.querySelector("#taskBox");
 let taskObj = {};
 let counter = 1;
+let totalTask = document.querySelector("#taskNumber");
+let completeTask = document.querySelector("#completeNumber");
+let incompleteTask = document.querySelector("#incompleteNumber");
+let completePer = document.querySelector("#complete");
+let completeBtn = document.querySelector("");
+let completeCounter = 0;
 
 // Load tasks from localStorage on page load
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,6 +37,7 @@ function addToTable(key, value) {
   let cell3 = newRow.insertCell(2);
   let cell4 = newRow.insertCell(3);
   let cell5 = newRow.insertCell(4);
+  let cell6 = newRow.insertCell(5);
 
   let timeString = now.toLocaleTimeString("en-US", {
     hour: "numeric",
@@ -45,9 +52,17 @@ function addToTable(key, value) {
   cell2.textContent = key;
   cell3.textContent = value;
   cell4.textContent = timeString;
-  cell5.innerHTML = '<button class="removeTaskNew">Remove Task</button>';
+  cell5.innerHTML = '<button class="removeTaskNewComplete">Completed</button>';
+  cell6.innerHTML =
+    '<button class="removeTaskNewIncomplete">Incomplete</button>';
 
-  let removeButton = newRow.querySelector(".removeTaskNew");
+  let removeButtonComplete = newRow.querySelector(".removeTaskNewComplete");
+  removeButton.addEventListener("click", () => {
+    removeTask(newRow);
+    completeCounter++;
+  });
+
+  let removeButtonIncomplete = newRow.querySelector(".removeTaskNewIncomplete");
   removeButton.addEventListener("click", () => {
     removeTask(newRow);
   });
@@ -81,3 +96,8 @@ function loadTasksFromLocalStorage() {
     }
   }
 }
+
+// Status Update Module
+
+totalTask.innerText = `Task: ${counter}`;
+completeTask.innerText = `Completed: ${completeCounter}`;
