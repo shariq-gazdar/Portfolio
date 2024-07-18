@@ -4,6 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App | Get Updated With The Weather Today</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body class="bg-gradient-to-l from-slate-500 to-slate-700">
+    <nav class="flex justify-evenly">
+      <div id="imgText" class="flex items-center text-white">
+        <img
+          src="—Pngtree—sun logo as an icon_15100335.png"
+          alt=""
+          class="w-16"
+        />
+        <h1 class="text-3xl">Weather App</h1>
+      </div>
+    </nav>
+    <section
+      id="cityForm"
+      class="flex justify-center flex-col items-center text-white"
+    >
+      <h1 class="py-4 text-4xl">Enter Your City:</h1>
+      <input
+        type="text"
+        name="cityName"
+        id="cityName"
+        class="my-5 rounded-2xl p-3"
+        placeholder="Enter Your City Name:"
+      />
+      <button
+        id="checkBtn"
+        class="bg-amber-600 p-2 m-2 rounded-xl border-2 border-black"
+      >
+        Check Weather
+      </button>
+    </section>
+    <section
+      id="weatherSection"
+      class="border border-black rounded-xl m-5 flex justify-center gap-9 bg-slate-900/50"
+    >
+      <img
+        src="https://cdn.weatherapi.com/weather/64x64/night/143.png"
+        alt=""
+        class="min-w-44"
+      />
+      <div id="whiteLine" class="bg-white w-1 m-4"></div>
+      <div id="weatherInfo" class="flex flex-col items-center text-white py-10">
+        <h1 id="cityNameHeading" class="text-4xl">City Name :</h1>
+        <h2 id="temperatureHeading" class="text-2xl">Temperature :</h2>
+        <h2 id="humidityHeading" class="text-xl">Humidity</h2>
+      </div>
+      <div id="weatherInfo" class="flex flex-col items-center text-white py-10">
+        <h1 id="cityNameDisplay" class="text-4xl">Karachi</h1>
+        <h2 id="temperatureDisplay" class="text-2xl">45 &deg;</h2>
+        <h2 id="humidityDisplay" class="text-xl">45</h2>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
 </html>
