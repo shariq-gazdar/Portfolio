@@ -48,45 +48,47 @@
       />
       <div
         id="whiteLine"
-        class="rotate-90 bg-white w-1 -my-48 h-96 lg:rotate-180"
+        class="rotate-90 bg-white w-1 -my-14 h-40 lg:rotate-180"
       ></div>
-      <div
-        id="weatherInfoHeading"
-        class="lg: flex flex-col items-center text-white py-10"
-      >
-        <h1 id="cityNameHeading" class="text-4xl">City Name :</h1>
-        <div id="temprature" class="flex items-center">
-          <h2 id="temperatureHeading" class="text-2xl">Temperature</h2>
-          <img
-            src="assets/thermometer-removebg-preview.png"
-            alt=""
-            class="max-w-4 px-1"
-          />
-          :
+      <div id="weatherBox" class="flex gap-x-3">
+        <div
+          id="weatherInfoHeading"
+          class="lg: flex flex-col items-center text-white py-10"
+        >
+          <h1 id="cityNameHeading" class="text-4xl">City Name :</h1>
+          <div id="temprature" class="flex items-center">
+            <h2 id="temperatureHeading" class="text-2xl">Temperature</h2>
+            <img
+              src="assets/thermometer-removebg-preview.png"
+              alt=""
+              class="max-w-4 px-1"
+            />
+            :
+          </div>
+          <div class="humidty flex items-center">
+            <h2 id="humidityHeading" class="text-xl">Humidity</h2>
+            <img
+              src="assets/humidSymbol-removebg-preview.png"
+              alt=""
+              class="max-w-12 px-1"
+            />
+            :
+          </div>
+          <div class="wind flex item-center">
+            <h2 id="windHeading" class="text-xl">Wind Speed :</h2>
+            <img src="assets/wind.png" alt="" class="max-w-8 px-1" />
+            :
+          </div>
         </div>
-        <div class="humidty flex items-center">
-          <h2 id="humidityHeading" class="text-xl">Humidity</h2>
-          <img
-            src="assets/humidSymbol-removebg-preview.png"
-            alt=""
-            class="max-w-12 px-1"
-          />
-          :
+        <div
+          id="weatherInfoBox"
+          class="flex flex-col items-center text-white py-10 gap-y-1"
+        >
+          <h1 id="cityNameDisplay" class="text-4xl">Karachi</h1>
+          <h2 id="temperatureDisplay" class="text-2xl">45 &deg;</h2>
+          <h2 id="humidityDisplay" class="text-xl">45</h2>
+          <h2 id="windDisplay" class="text-xl">45</h2>
         </div>
-        <div class="wind flex item-center">
-          <h2 id="windHeading" class="text-xl">Wind Speed :</h2>
-          <img src="assets/wind.png" alt="" class="max-w-8 px-1" />
-          :
-        </div>
-      </div>
-      <div
-        id="weatherInfoBox"
-        class="flex flex-col items-center text-white py-10 gap-y-1"
-      >
-        <h1 id="cityNameDisplay" class="text-4xl">Karachi</h1>
-        <h2 id="temperatureDisplay" class="text-2xl">45 &deg;</h2>
-        <h2 id="humidityDisplay" class="text-xl">45</h2>
-        <h2 id="windDisplay" class="text-xl">45</h2>
       </div>
     </section>
     <script src="app.js"></script>

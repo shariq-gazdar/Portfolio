@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let apiKey = `662a084d5f26412ca1e153450241807`;
         let weatherSection = document.querySelector("#weatherSection");
         weatherSection.classList.remove("hidden");
-        let cityName = document.querySelector("#cityName").value;
         let baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${x},${y}&aqi=no`;
+        let name = document.querySelector("#cityNameDisplay");
+        name.innerText = `Fetching weather data for your current location...`;
 
         try {
           let response = await fetch(baseUrl);
