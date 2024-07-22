@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
           windDisplay.innerText = `${resultJson.current.wind_kph}kph`;
         } catch (error) {
           console.error("Error:", error);
+          let name = document.querySelector("#cityNameDisplay");
+          name.innerText =
+            "Unable to fetch weather data for your current location.";
         }
       }
     }
@@ -72,3 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+let forecastUpdate = () =>{
+
+  let tempFore = document.querySelector("#temperatureDisplayFore");
+  let humidityFore = document.querySelector("#humidityDisplayFore");
+  let weatherIconFore = document.querySelector("#weatherIconFore");
+  let windDisplayFore = document.querySelector("#windDisplayFore");
+  let cityName = document.querySelector("#cityName").value;
+  let baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}&aqi=no/forecast.json`;
+  tempFore.
+}
