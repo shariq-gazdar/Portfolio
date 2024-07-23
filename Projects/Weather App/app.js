@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
           humidity.innerText = `${resultJson.current.humidity}%`;
           windDisplay.innerText = `${resultJson.current.wind_kph}kph`;
           weatherIcon.src = `https:${resultJson.current.condition.icon}`;
+          forecastUpdate();
         } catch (error) {
           console.error("Error:", error);
         }
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let apiKey = `662a084d5f26412ca1e153450241807`;
         let weatherSection = document.querySelector("#weatherSection");
         weatherSection.classList.remove("hidden");
-        let baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${x},${y}&aqi=no`;
+        let baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${x},${y}&aqi=no&days=2`;
         let name = document.querySelector("#cityNameDisplay");
         name.innerText = `Fetching weather data for your current location...`;
 
@@ -71,17 +72,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     navigator.geolocation.getCurrentPosition((position) => {
+      let cityName = document.querySelector("#cityName").value;
       weatherUpdate(position.coords.latitude, position.coords.longitude);
+      if (cityName == "") {
+        forecastUpdate(position.coords.latitude, position.coords.longitude);
+      }
     });
   });
 });
-let forecastUpdate = () =>{
-
-  let tempFore = document.querySelector("#temperatureDisplayFore");
-  let humidityFore = document.querySelector("#humidityDisplayFore");
-  let weatherIconFore = document.querySelector("#weatherIconFore");
-  let windDisplayFore = document.querySelector("#windDisplayFore");
+let forecastUpdate = async (x, y) => {
   let cityName = document.querySelector("#cityName").value;
-  let baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}&aqi=no/forecast.json`;
-  tempFore.
-}
+  if (cityName !== "") {
+    let apiKey = `662a084d5f26412ca1e153450241807`;
+    console.log("CityName");
+    let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&aqi=no&days=2`;
+    let response = await fetch(forecastUrl);
+    let data = await response.json();
+    console.log(data.forecast);
+  } else {
+    console.log(x);
+    console.log(y);
+    let apiKey = `662a084d5f26412ca1e153450241807`;
+    let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${x},${y}&aqi=no&days=2`;
+    let response = await fetch(forecastUrl);
+    let data = await response.json();
+    console.log(data.forecast);
+  }
+};
