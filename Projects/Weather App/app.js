@@ -96,6 +96,7 @@ let forecastUpdate = async (x, y) => {
     let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${x},${y}&aqi=no&days=2`;
     let response = await fetch(forecastUrl);
     let data = await response.json();
-    console.log(data.forecast);
+    let dataArr = data.forecast.forecastday[1];
+    console.log(dataArr);
   }
 };
