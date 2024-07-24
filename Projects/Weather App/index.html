@@ -54,11 +54,16 @@
       <div id="weatherBox" class="flex gap-x-3">
         <div
           id="weatherInfoHeading"
-          class="lg: flex flex-col items-center text-white py-10"
+          class="lg: flex flex-col items-center text-white py-10 gap-2"
         >
           <h1 id="cityNameHeading" class="text-4xl">City Name :</h1>
           <div id="temprature" class="flex items-center">
-            <h2 id="temperatureHeading" class="text-2xl">Temperature</h2>
+            <h2
+              id="temperatureHeading"
+              class="text-2xl border-y border-slate-100"
+            >
+              Temperature
+            </h2>
             <img
               src="assets/thermometer-removebg-preview.png"
               alt=""
@@ -106,13 +111,10 @@
           src="https://cdn.weatherapi.com/weather/64x64/night/143.png"
           alt=""
           id="weatherIcon"
-          class="w-10"
+          class="w-32"
         />
-        <div
-          id="whiteLine"
-          class="bg-white w-1 rotate-90 -my-14 h-40 lg:rotate-180"
-        ></div>
-        <div id="weatherBox" class="flex gap-x-3">
+        <div id="whiteLine" class="bg-white w-1 -my-24 h-40 lg:rotate-90"></div>
+        <div id="weatherBox" class="flex gap-x-3 -mt-8">
           <div
             id="weatherInfoHeading"
             class="lg: flex flex-col items-center text-white py-10 text-xs"
