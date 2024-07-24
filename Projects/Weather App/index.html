@@ -96,54 +96,59 @@
     <h1 class="text-center mt-5 text-3xl text-white">Forecast Weather :</h1>
     <section
       id="weatherSectionFore"
-      class="flex-col border border-black rounded-xl m-5 flex justify-center gap-9 bg-slate-900/50 lg:flex-row items-center"
+      class="border border-black rounded-xl m-5 flex justify-center gap-9 bg-slate-900/50 lg:flex-row items-center"
     >
-      <img
-        src="https://cdn.weatherapi.com/weather/64x64/night/143.png"
-        alt=""
-        id="weatherIcon"
-        class="w-52"
-      />
       <div
-        id="whiteLine"
-        class="rotate-90 bg-white w-1 -my-14 h-40 lg:rotate-180"
-      ></div>
-      <div id="weatherBox" class="flex gap-x-3">
+        id="mainSection"
+        class="flex justify-around items-center flex-col gap-5 text-xs w-44"
+      >
+        <img
+          src="https://cdn.weatherapi.com/weather/64x64/night/143.png"
+          alt=""
+          id="weatherIcon"
+          class="w-10"
+        />
         <div
-          id="weatherInfoHeading"
-          class="lg: flex flex-col items-center text-white py-10"
-        >
-          <div id="temprature" class="flex items-center">
-            <h2 id="temperatureHeading" class="text-2xl">Temperature</h2>
-            <img
-              src="assets/thermometer-removebg-preview.png"
-              alt=""
-              class="max-w-4 px-1"
-            />
-            :
+          id="whiteLine"
+          class="bg-white w-1 rotate-90 -my-14 h-40 lg:rotate-180"
+        ></div>
+        <div id="weatherBox" class="flex gap-x-3">
+          <div
+            id="weatherInfoHeading"
+            class="lg: flex flex-col items-center text-white py-10 text-xs"
+          >
+            <div id="temprature" class="flex items-center">
+              <h2 id="temperatureHeading">Temperature</h2>
+              <img
+                src="assets/thermometer-removebg-preview.png"
+                alt=""
+                class="max-w-4 px-1"
+              />
+              :
+            </div>
+            <div class="humidty flex items-center">
+              <h2 id="humidityHeading">Humidity</h2>
+              <img
+                src="assets/humidSymbol-removebg-preview.png"
+                alt=""
+                class="max-w-12 px-1"
+              />
+              :
+            </div>
+            <div class="wind flex item-center">
+              <h2 id="windHeading">Wind Speed</h2>
+              <img src="assets/wind.png" alt="" class="max-w-8 px-1" />
+              :
+            </div>
           </div>
-          <div class="humidty flex items-center">
-            <h2 id="humidityHeading" class="text-xl">Humidity</h2>
-            <img
-              src="assets/humidSymbol-removebg-preview.png"
-              alt=""
-              class="max-w-12 px-1"
-            />
-            :
+          <div
+            id="weatherInfoBox"
+            class="flex flex-col items-center text-white py-10 gap-y-2"
+          >
+            <h2 id="temperatureDisplayFore">45 &deg;C</h2>
+            <h2 id="humidityDisplayFore">45</h2>
+            <h2 id="windDisplayFore">45</h2>
           </div>
-          <div class="wind flex item-center">
-            <h2 id="windHeading" class="text-xl">Wind Speed :</h2>
-            <img src="assets/wind.png" alt="" class="max-w-8 px-1" />
-            :
-          </div>
-        </div>
-        <div
-          id="weatherInfoBox"
-          class="flex flex-col items-center text-white py-10 gap-y-1"
-        >
-          <h2 id="temperatureDisplayFore" class="text-2xl">45 &deg;</h2>
-          <h2 id="humidityDisplayFore" class="text-xl">45</h2>
-          <h2 id="windDisplayFore" class="text-xl">45</h2>
         </div>
       </div>
     </section>
