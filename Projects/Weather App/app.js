@@ -97,6 +97,7 @@ let forecastUpdate = async (x, y) => {
     let response = await fetch(forecastUrl);
     let data = await response.json();
     let dataArr = data.forecast.forecastday[1];
+    console.log(forecastUrl);
     console.log(dataArr);
   }
 };
