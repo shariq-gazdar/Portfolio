@@ -6,7 +6,9 @@
     <title>Weather App | Get Updated With The Weather Today</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gradient-to-l from-slate-500 to-slate-700">
+  <body
+    class="bg-gradient-to-l from-slate-700 from-10% via-blue-400 to-amber-500"
+  >
     <nav class="flex justify-evenly">
       <div id="imgText" class="flex items-center text-white">
         <img
@@ -39,7 +41,7 @@
     <h1 class="text-center mt-5 text-3xl text-white">Current Weather :</h1>
     <section
       id="weatherSection"
-      class="border border-black rounded-xl flex flex-col m-auto items-center justify-center gap-9 bg-slate-900/50 lg:flex-row w-40"
+      class="border border-black rounded-xl flex flex-col m-auto items-center justify-center gap-9 bg-slate-900/50 min-w-96 max-w-96"
     >
       <div id="upWeather">
         <img
@@ -53,9 +55,57 @@
       <div id="downWeather" class="text-white">
         <table class="overflow-hidden p-10">
           <thead class="text-lg">
-            <tr>
-              <th class="pr-6">City Name</th>
+            <tr class="border-t border-b rounded-2xl text-2xl text-left">
+              <th class="pr-6 text-left">City Name</th>
               <th class="pl-6">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">Condition</th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">
+                Temperature &deg;C / &deg;F
+                <img
+                  src="assets/thermometer-removebg-preview.png"
+                  alt=""
+                  class="inline w-5"
+                />
+              </th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">
+                Max/Avg Temp. &deg;C
+                <img
+                  src="assets/thermometer-removebg-preview.png"
+                  alt=""
+                  class="inline w-5"
+                />
+              </th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="pr-6 text-left">
+                Humidity
+                <img
+                  src="assets/humidSymbol-removebg-preview.png"
+                  alt=""
+                  class="inline w-10"
+                />
+              </th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="pr-6 text-left">
+                Humidity
+                <img
+                  src="assets/humidSymbol-removebg-preview.png"
+                  alt=""
+                  class="inline w-10"
+                />
+              </th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
             </tr>
           </thead>
         </table>
