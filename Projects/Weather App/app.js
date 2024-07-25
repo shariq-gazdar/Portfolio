@@ -87,21 +87,47 @@ document.addEventListener("DOMContentLoaded", () => {
 let forecastUpdate = async (x, y) => {
   let cityName = document.querySelector("#cityName").value;
   if (cityName !== "") {
+    let cityName = document.querySelector("#cityName").value;
     let apiKey = `662a084d5f26412ca1e153450241807`;
-    console.log("CityName");
     let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&aqi=no&days=2`;
-    let response = await fetch(forecastUrl);
-    let data = await response.json();
-    console.log(data.forecast);
-  } else {
-    console.log(x);
-    console.log(y);
-    let apiKey = `662a084d5f26412ca1e153450241807`;
-    let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${x},${y}&aqi=no&days=2`;
+    let weatherIcon = document.querySelector("#weatherIconFore");
+    let forecastDay = document.querySelector("#foreDateDisplay");
+    let conditionFore = document.querySelector("#conditionDispFore");
+    let temperature = document.querySelector("#temperatureDisplayFore");
+    let chanceRain = document.querySelector("#chanceOfRainDisplay");
     let response = await fetch(forecastUrl);
     let data = await response.json();
     let dataArr = data.forecast.forecastday[1];
-    console.log(forecastUrl);
-    console.log(dataArr);
+    weatherIcon.src = `https:${dataArr.day.condition.icon}`;
+    forecastDay.innerText = `${dataArr.date}`;
+    conditionFore.innerText = `${dataArr.day.condition.text}`;
+    temperature.innerText = `${dataArr.day.maxtemp_c} / ${dataArr.day.mintemp_c} °C  `;
+    chanceRain.innerText = `${dataArr.day.daily_chance_of_rain} %`;
+  } else {
+    let apiKey = `662a084d5f26412ca1e153450241807`;
+    let forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${x},${y}&aqi=no&days=2`;
+    let weatherIcon = document.querySelector("#weatherIconFore");
+    let forecastDay = document.querySelector("#foreDateDisplay");
+    let conditionFore = document.querySelector("#conditionDispFore");
+    let temperature = document.querySelector("#temperatureDisplayFore");
+    let chanceRain = document.querySelector("#chanceOfRainDisplay");
+    let response = await fetch(forecastUrl);
+    let data = await response.json();
+    let dataArr = data.forecast.forecastday[1];
+    weatherIcon.src = `https:${dataArr.day.condition.icon}`;
+    forecastDay.innerText = `${dataArr.date}`;
+    conditionFore.innerText = `${dataArr.day.condition.text}`;
+    temperature.innerText = `${dataArr.day.maxtemp_c} / ${dataArr.day.mintemp_c} °C  `;
+    chanceRain.innerText = `${dataArr.day.daily_chance_of_rain} %`;
+    let hourElement = dataArr.hour;
+    console.log(hourElement);
+    hourElement.forEach((element) => {
+      console.log(element);
+    });
   }
 };
+document.addEventListener("DOMContentLoaded", () => {
+  let clickBtn = document.querySelector("#triggerBtn");
+  console.log(clickBtn);
+  clickBtn.click();
+});
