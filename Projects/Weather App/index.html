@@ -57,15 +57,15 @@
         <div id="whiteLine" class="bg-white h-1"></div>
       </div>
       <div id="downWeather" class="text-white">
-        <table class="overflow-hidden p-10 max-w-80">
+        <table class="overflow-hidden p-10 max-w-96">
           <thead class="text-lg">
             <tr class="border-t border-b rounded-2xl text-2xl text-left">
               <th class="pr-6 text-left py-2">City Name</th>
-              <th class="pl-6">Karachi</th>
+              <th class="pl-6" id="cityNameDisplay">Karachi</th>
             </tr>
             <tr class="border-t border-b rounded-2xl">
               <th class="text-left pr-6 py-5">Condition</th>
-              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+              <th class="pl-6" id="conditionDisp">Karachi</th>
             </tr>
             <tr class="border-t border-b rounded-2xl">
               <th class="text-left pr-6 py-5">
@@ -76,7 +76,7 @@
                   class="inline w-5"
                 />
               </th>
-              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+              <th class="pl-6" id="temperatureDisplay">Karachi</th>
             </tr>
             <tr class="border-t border-b rounded-2xl">
               <th class="text-left pr-6 py-5">
@@ -87,7 +87,7 @@
                   class="inline w-5"
                 />
               </th>
-              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+              <th class="pl-6" id="feelLikeDisplay">Karachi</th>
             </tr>
             <tr class="border-t border-b rounded-2xl">
               <th class="pr-6 text-left py-5">
@@ -98,14 +98,14 @@
                   class="inline w-10"
                 />
               </th>
-              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+              <th class="pl-6" id="humidityDisplay">Karachi</th>
             </tr>
-            <tr class="border-t border-b rounded-2xl">
+            <tr class="border-t rounded-2xl">
               <th class="pr-6 text-left py-5">
                 Wind Speed
                 <img src="assets/wind.png" alt="" class="inline w-9" />
               </th>
-              <th class="pl-6" id="cityNameDisplay">Karachi</th>
+              <th class="pl-6" id="windDisplay">Karachi</th>
             </tr>
           </thead>
         </table>
@@ -117,55 +117,57 @@
       id="weatherSectionFore"
       class="border border-black rounded-xl m-5 flex justify-center gap-9 bg-slate-900/50 lg:flex-row items-center"
     >
-      <div
-        id="mainSection"
-        class="flex justify-around items-center flex-col gap-5 text-xs w-44"
-      >
+      <div id="upWeather">
         <img
           src="https://cdn.weatherapi.com/weather/64x64/night/143.png"
           alt=""
           id="weatherIcon"
           class="w-32"
         />
-        <div id="whiteLine" class="bg-white w-1 -my-24 h-40 lg:rotate-90"></div>
-        <div id="weatherBox" class="flex gap-x-3 -mt-8">
-          <div
-            id="weatherInfoHeading"
-            class="lg: flex flex-col items-center text-white py-10 text-xs"
-          >
-            <div id="temprature" class="flex items-center">
-              <h2 id="temperatureHeading">Temperature</h2>
-              <img
-                src="assets/thermometer-removebg-preview.png"
-                alt=""
-                class="max-w-4 px-1"
-              />
-              :
-            </div>
-            <div class="humidty flex items-center">
-              <h2 id="humidityHeading">Humidity</h2>
-              <img
-                src="assets/humidSymbol-removebg-preview.png"
-                alt=""
-                class="max-w-12 px-1"
-              />
-              :
-            </div>
-            <div class="wind flex item-center">
-              <h2 id="windHeading">Wind Speed</h2>
-              <img src="assets/wind.png" alt="" class="max-w-8 px-1" />
-              :
-            </div>
-          </div>
-          <div
-            id="weatherInfoBox"
-            class="flex flex-col items-center text-white py-10 gap-y-2"
-          >
-            <h2 id="temperatureDisplayFore">45 &deg;C</h2>
-            <h2 id="humidityDisplayFore">45</h2>
-            <h2 id="windDisplayFore">45</h2>
-          </div>
-        </div>
+        <div id="whiteLine" class="bg-white h-1"></div>
+      </div>
+      <div id="downWeather" class="text-white">
+        <table class="overflow-hidden p-10 max-w-96">
+          <thead class="text-lg">
+            <tr class="border-b rounded-2xl text-2xl text-left">
+              <th class="pr-6 text-left py-2">Date:</th>
+              <th class="pl-6" id="foreDateDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">Condition</th>
+              <th class="pl-6" id="conditionDisp">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">
+                Temperature &deg;C / &deg;F
+                <img
+                  src="assets/thermometer-removebg-preview.png"
+                  alt=""
+                  class="inline w-5"
+                />
+              </th>
+              <th class="pl-6" id="temperatureDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t border-b rounded-2xl">
+              <th class="text-left pr-6 py-5">
+                Feels Like &deg; C
+                <img
+                  src="assets/thermometer-removebg-preview.png"
+                  alt=""
+                  class="inline w-5"
+                />
+              </th>
+              <th class="pl-6" id="feelLikeDisplay">Karachi</th>
+            </tr>
+            <tr class="border-t rounded-2xl">
+              <th class="pr-6 text-left py-5">
+                Wind Speed
+                <img src="assets/wind.png" alt="" class="inline w-9" />
+              </th>
+              <th class="pl-6" id="windDisplay">Karachi</th>
+            </tr>
+          </thead>
+        </table>
       </div>
     </section>
     <script src="app.js"></script>

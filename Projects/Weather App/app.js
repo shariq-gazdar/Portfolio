@@ -51,17 +51,21 @@ document.addEventListener("DOMContentLoaded", () => {
             );
           }
           let name = document.querySelector("#cityNameDisplay");
+          let condition = document.querySelector("#conditionDisp");
           let temp = document.querySelector("#temperatureDisplay");
           let humidity = document.querySelector("#humidityDisplay");
           let weatherIcon = document.querySelector("#weatherIcon");
           let windDisplay = document.querySelector("#windDisplay");
+          let FeelLike = document.querySelector("#feelLikeDisplay");
           let resultJson = await response.json();
           console.log(resultJson);
           name.innerText = resultJson.location.name;
-          temp.innerText = `${resultJson.current.temp_c}°C`;
+          condition.innerText = `${resultJson.current.condition.text}`;
+          temp.innerText = `${resultJson.current.temp_c}°C / ${resultJson.current.temp_f}°F`;
           humidity.innerText = `${resultJson.current.humidity}%`;
           weatherIcon.src = `https:${resultJson.current.condition.icon}`;
           windDisplay.innerText = `${resultJson.current.wind_kph}kph`;
+          FeelLike.innerText = `${resultJson.current.wind_kph}°C`;
         } catch (error) {
           console.error("Error:", error);
           let name = document.querySelector("#cityNameDisplay");
