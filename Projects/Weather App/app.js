@@ -119,12 +119,16 @@ let forecastUpdate = async (x, y) => {
     conditionFore.innerText = `${dataArr.day.condition.text}`;
     temperature.innerText = `${dataArr.day.maxtemp_c} / ${dataArr.day.mintemp_c} °C  `;
     chanceRain.innerText = `${dataArr.day.daily_chance_of_rain} %`;
-    let hourElement = dataArr.hour;
-    console.log(hourElement);
-    hourElement.forEach((element) => {
-      console.log(element);
-    });
+    hourForecastUpdate(dataArr);
   }
+};
+let hourForecastUpdate = async (dataArr) => {
+  console.log(dataArr);
+  let hourCollect = document.querySelector("#hourCollect");
+  let list = hourCollect.childNodes;
+  list.forEach((item) => {
+    console.log(item);
+  });
 };
 document.addEventListener("DOMContentLoaded", () => {
   let clickBtn = document.querySelector("#triggerBtn");
