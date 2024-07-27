@@ -123,12 +123,16 @@ let forecastUpdate = async (x, y) => {
   }
 };
 let hourForecastUpdate = async (dataArr) => {
-  console.log(dataArr);
-  let hourCollect = document.querySelector("#hourCollect");
-  let list = hourCollect.childNodes;
-  list.forEach((item) => {
-    console.log(item);
-  });
+  let hourArr = dataArr.hour;
+  for (let i = 0; i < hourArr.length; i++) {
+    let tempHour = document.querySelectorAll(".tempHour");
+    let hourArr = dataArr.hour;
+    let hour = hourArr[i];
+    let temp = tempHour[i];
+    console.log(i);
+    console.log(hour);
+    temp.innerText = `${hour.temp_c}°C /${hour.temp_f}°F `;
+  }
 };
 document.addEventListener("DOMContentLoaded", () => {
   let clickBtn = document.querySelector("#triggerBtn");
