@@ -126,12 +126,31 @@ let hourForecastUpdate = async (dataArr) => {
   let hourArr = dataArr.hour;
   for (let i = 0; i < hourArr.length; i++) {
     let tempHour = document.querySelectorAll(".tempHour");
+    let icons = document.querySelectorAll(".weatherIconFore");
+    let times = document.querySelectorAll(".timeFore");
     let hourArr = dataArr.hour;
     let hour = hourArr[i];
     let temp = tempHour[i];
+    let icon = icons[i];
+    let time = times[i];
+    let timeStr = hour.time;
+    let timeArr = timeStr.split(" ");
+    let timeHour = timeArr[1];
+    if (i >= 13) {
+      let firstArr = timeHour.split(":");
+      let first = firstArr[0];
+      first = first - 12;
+      time.innerText = `${first}:00 P.M`;
+    } else if (i == 0) {
+      time.innerText = `12:00 A.M`;
+    } else {
+      time.innerText = `${timeHour} A.M`;
+    }
     console.log(i);
     console.log(hour);
     temp.innerText = `${hour.temp_c}°C /${hour.temp_f}°F `;
+    console.log(icon);
+    icon.src = `https:${hour.condition.icon}`;
   }
 };
 document.addEventListener("DOMContentLoaded", () => {
