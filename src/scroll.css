@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Basic styling */
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+  height: 10px; /* height of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the scrollbar thumb */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+#skillSection::-webkit-scrollbar {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+}
+html {
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
