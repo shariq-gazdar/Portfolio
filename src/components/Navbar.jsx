@@ -4,9 +4,9 @@ import { Navbar } from "flowbite-react";
 
 export function Nav() {
   return (
-    <Navbar className="bg-black text-white w-screen overflow-x-hidden +sm:overflow-x-hidden">
+    <Navbar className="bg-black/50 text-white w-screen overflow-x-hidden +sm:overflow-x-hidden fixed z-50 ">
       <Navbar.Brand>
-        <h1 id="navHeading" class="font-Rowdies font-bold text-3xl">
+        <h1 id="navHeading" className="font-Rowdies font-bold text-3xl">
           Shariq
         </h1>
       </Navbar.Brand>
